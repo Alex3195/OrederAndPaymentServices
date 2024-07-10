@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test_payments_db
+    username: postgres
+    password: Alex!123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: payment-service-test
+  producer:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    org:
+      springframework:
+        kafka: DEBUG
